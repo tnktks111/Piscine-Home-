@@ -6,12 +6,17 @@
 /*   By: tanaka_tsukasa <marvin@42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 00:05:07 by tanaka_tsukas     #+#    #+#             */
-/*   Updated: 2025/03/13 00:14:05 by tanaka_tsukas    ###   ########.fr       */
+/*   Updated: 2025/03/13 12:44:04 by tanaka_tsukas    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+#include <unistd.h>
 
 void	ft_putchar(char c)
 {
-	write(1, &c, 1)
+	write(1, &c, 1);
 }
+
+/* int	main(void)
+{
+	ft_putchar('a');
+} */

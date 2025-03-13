@@ -6,11 +6,10 @@
 /*   By: tanaka_tsukasa <marvin@42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 00:38:45 by tanaka_tsukas     #+#    #+#             */
-/*   Updated: 2025/03/13 00:40:09 by tanaka_tsukas    ###   ########.fr       */
+/*   Updated: 2025/03/13 12:49:35 by tanaka_tsukas    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-int	ft_putchar(char c);
+#include <unistd.h>
 
 void	ft_print_alphabet(void)
 {
@@ -18,5 +17,14 @@ void	ft_print_alphabet(void)
 
 	ltr = 'a';
 	while (ltr <= 'z')
-		ft_putchar(ltr++);
+	{
+		write(1, &ltr, 1);
+
+		ltr++;
+	}
 }
+int	main(void)
+{
+	ft_print_alphabet();
+}
+

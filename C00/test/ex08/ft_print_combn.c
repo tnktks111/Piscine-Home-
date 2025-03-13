@@ -6,57 +6,59 @@
 /*   By: tanaka_tsukasa <marvin@42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 01:11:33 by tanaka_tsukas     #+#    #+#             */
-/*   Updated: 2025/03/13 01:20:40 by tanaka_tsukas    ###   ########.fr       */
+/*   Updated: 2025/03/13 17:58:41 by ttanaka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_putchar(char c);
 
-static void generate_next_combination(int *arr, int col, int n)
+#include <unistd.h>
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+void	ft_print_combn_recursive(int n, int start, int current, int output[])
 {
 	int	i;
+	int	j;
 
-	while (col >= 0)
+	if (current == n)
 	{
-		while (arr[col] == (10 - (n - col)) && col >= 0)
-			col -= 1;
-		if (col < 0)
-			break ;
-		arr[col] ++ 1;
-		i = col + 1;
+		i = 0;
 		while (i < n)
 		{
-			arr[i] = arr[i - 1] + 1;
+			ft_putchar(output[i] + '0');
 			i++;
 		}
 
-		ft_putchar(',');
-		ft_putchar(' ');
-		
-		i = 0;
-		while (i < n)
-			ft_putchar(arr[i++] + '0');
+		if (output[0] != 10 - n)
+		{
+			ft_putchar(',');
+			ft_putchar(' ');
+		}
+		return ;
+	}
+	j = start;
+	while (j <= (9 - ((n - 1) - current)))
+	{
+		output[current] = j;
+		ft_print_combn_recursive(n, j + 1, current + 1, output);
+		j++;
 	}
 }
 
 void	ft_print_combn(int n)
 {
-	static int	arr[10];
-	int	i;
+	int	output[10];
 
-	if (n <= 0 || n > 10)
+	if (n > 0 && n < 10)
+		ft_print_combn_recursive(n, 0, 0, output);
+	else
 		return ;
+}
 
-	i = 0;
-	while (i < n)
-	{
-		arr[i] = i;
-		i++;
-	}
-
-	i = 0;
-	while (i < n)
-		ft_putchar(arr[i++] + '0');
-	ft_me_cago_en_norminette(arr, n - 1, n);
-	ft_putchar('\n');
+int	main(void)
+{
+	ft_print_combn(4);
 }

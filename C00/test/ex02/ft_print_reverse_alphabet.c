@@ -6,11 +6,11 @@
 /*   By: tanaka_tsukasa <marvin@42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 00:42:13 by tanaka_tsukas     #+#    #+#             */
-/*   Updated: 2025/03/13 00:43:05 by tanaka_tsukas    ###   ########.fr       */
+/*   Updated: 2025/03/13 12:52:42 by tanaka_tsukas    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_putchar(char c);
+#include <unistd.h>
 
 void	ft_print_reverse_alphabet(void)
 {
@@ -18,5 +18,13 @@ void	ft_print_reverse_alphabet(void)
 
 	ltr = 'z';
 	while (ltr >= 'a')
-		ft_putchar(ltr--);
+	{
+		write(1, &ltr, 1);
+		ltr--;
+	}
+}
+
+int main(void)
+{
+	ft_print_reverse_alphabet();
 }

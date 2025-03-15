@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tanaka_tsukasa <marvin@42.fr>              +#+  +:+       +#+        */
+/*   By: ttanaka <ttanaka@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/13 00:44:56 by tanaka_tsukas     #+#    #+#             */
-/*   Updated: 2025/03/13 00:46:52 by tanaka_tsukas    ###   ########.fr       */
+/*   Created: 2025/03/15 10:29:57 by ttanaka           #+#    #+#             */
+/*   Updated: 2025/03/15 10:29:59 by ttanaka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_putchar(char c);
+#include <stdio.h>
 
-void	ft_print_numbers(void)
+int 	ft_strlen(char *str)
 {
-	char	num;
-	num = '0';
-	while (num <= '9')
-		ft_putchar(num++);
+	int 	i;
+
+	i = 0;
+	while (str[i])
+	{
+		i++;
+	}
+	return (i);
+}
+
+int main()
+{
+	char str[] = "abcde";
+	printf("%d\n", ft_strlen(str));
+	return (0);
 }

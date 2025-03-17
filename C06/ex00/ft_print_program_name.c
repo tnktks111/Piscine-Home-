@@ -16,13 +16,13 @@ int main(int argc, char *argv[])
 {
 	if (argc > 0 && argv[0])
 	{
-		int i;
+		char *ptr;
 
-		i = 0;
-		while (argv[0][i])
+		ptr = argv[0];
+		while (*ptr)
 		{
-			write(1, &argv[0][i], 1);
-			i++;
+			write(1, ptr, 1);
+			ptr++;
 		}
 	}
 	write(1, "\n", 1);

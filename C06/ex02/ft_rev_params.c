@@ -17,17 +17,20 @@ int main(int argc, char *argv[])
 	if (argc > 1 && argv[1])
 	{
 		int i;
+		char *ptr;
 
 		i = argc - 1;
 		while (i > 0)
 		{
-			while (*argv[i])
+			ptr = argv[i];
+			while (*ptr)
 			{
-				write(1, argv[i], 1);
-				argv[i]++;
+				write(1, ptr, 1);
+				ptr++;
 			}
 			write(1, "\n", 1);
 			i--;
 		}
 	}
+	return (0);
 }

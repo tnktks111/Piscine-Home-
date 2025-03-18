@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_range.c                                         :+:      :+:    :+:   */
+/*   ft_point.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ttanaka <ttanaka@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/16 23:33:34 by ttanaka           #+#    #+#             */
-/*   Updated: 2025/03/16 23:33:35 by ttanaka          ###   ########.fr       */
+/*   Created: 2025/03/18 16:58:55 by ttanaka           #+#    #+#             */
+/*   Updated: 2025/03/18 16:58:56 by ttanaka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 
-int	*ft_range(int min, int max)
+#include "ft_point.h"
+#include <stdio.h>
+
+void	set_point(t_point *point)
 {
-	int	*array;
-	int	i;
-
-	i = 0;
-
-	array = (int *) malloc(sizeof(int) * ((max - min) + 1));
-
-	if (min >= max)
-	{
-		array = (NULL);
-		return (0);
-	}
-
-	while (min < max)
-	{
-		array[i] = min;
-		i++;
-		min++;
-	}
-	return (array);
+	// defines the values for the struct variables
+	point-> x = 42;
+	point-> y = 21;
+}
+int	main(void)
+{
+	t_point point;
+	
+	set_point(&point);
+	printf("Valor de x: %d\n", point.x);
+    printf("Valor de y: %d\n", point.y);
+	return (0);
 }

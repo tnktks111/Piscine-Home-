@@ -1,37 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_range.c                                         :+:      :+:    :+:   */
+/*   ft_abs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ttanaka <ttanaka@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/16 23:33:34 by ttanaka           #+#    #+#             */
-/*   Updated: 2025/03/16 23:33:35 by ttanaka          ###   ########.fr       */
+/*   Created: 2025/03/18 16:54:45 by ttanaka           #+#    #+#             */
+/*   Updated: 2025/03/18 16:54:47 by ttanaka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <stdio.h>
+#include "ft_abs.h"
 
-int	*ft_range(int min, int max)
+int	main(void)
 {
-	int	*array;
-	int	i;
+	int i;
 
+	i = -42;
+	printf("ABS(%d) = %d\n", i, ABS(i));
+	i = 42;
+	printf("ABS(%d) = %d\n", i, ABS(i));
 	i = 0;
-
-	array = (int *) malloc(sizeof(int) * ((max - min) + 1));
-
-	if (min >= max)
-	{
-		array = (NULL);
-		return (0);
-	}
-
-	while (min < max)
-	{
-		array[i] = min;
-		i++;
-		min++;
-	}
-	return (array);
+	printf("ABS(%d) = %d\n", i, ABS(i));
+	return (0);
 }

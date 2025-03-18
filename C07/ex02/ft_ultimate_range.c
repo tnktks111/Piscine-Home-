@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_range.c                                         :+:      :+:    :+:   */
+/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ttanaka <ttanaka@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/16 23:33:34 by ttanaka           #+#    #+#             */
-/*   Updated: 2025/03/16 23:33:35 by ttanaka          ###   ########.fr       */
+/*   Created: 2025/03/18 22:20:08 by ttanaka           #+#    #+#             */
+/*   Updated: 2025/03/18 22:20:10 by ttanaka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	*ft_range(int **range, int min, int max)
+int	ft_ultimate_range(int **range, int min, int max)
 {
 	int *array;
 	int i;
 
 	if (min >= max)
 	{
-		return (NULL);
+		*range = (NULL);
+		return (0);
 	}
 	array = (int *)malloc(sizeof(int) * (max - min));
 	if (array == NULL)
 	{
-		return (NULL);
+		*range = (NULL);
+		return (-1);
 	}
 	i = 0;
 	while (min < max)
@@ -33,5 +35,6 @@ int	*ft_range(int **range, int min, int max)
 		i++;
 		min++;
 	}
-	return (array);
+	*range = array;
+	return (i);
 }

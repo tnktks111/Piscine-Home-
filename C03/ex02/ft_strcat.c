@@ -44,4 +44,3 @@ int main()
 	printf("%s\n", strcat(dest2, src2));
 	return (0);
 }
- 

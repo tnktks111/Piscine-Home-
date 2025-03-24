@@ -1,0 +1,6 @@
+{
+	"files.associations": {
+		"*.py": "python",
+		"count_visible_buildings": "cpp"
+	}
+}

@@ -1,0 +1,1 @@
+cc -Wall -Wextra -Werror -o do-op *.c

@@ -247,7 +247,7 @@ void print_grid(Puzzle *puzzle)
 
 int main(int argc, char *argv[]) {
     if (argc != 2) {
-        printf("\u4f7f\u7528\u65b9\u6cd5: %s \"\u30d2\u30f3\u30c8\"\n", argv[0]);
+        printf("使用方法: %s \"ヒント\"\n", argv[0]);
         return 1;
     }
     Puzzle puzzle;
